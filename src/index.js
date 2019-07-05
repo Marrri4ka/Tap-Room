@@ -6,6 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import {HashRouter} from 'react-router-dom';
 import {AppContainer} from 'react-hot-loader';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 const render = (Component) => {
   ReactDOM.render(<div><AppContainer>

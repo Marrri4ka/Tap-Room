@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {v4} from 'uuid';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
 function NewKeg(props){
   let _names = null;
@@ -21,24 +22,55 @@ function NewKeg(props){
   return (
     <div>
 
-      <form onSubmit={handleNewKegFormSubmission}>
-          <input
-            type='text'
-            id='names'
-            placeholder='Keg Name'
-            ref={(input) => {_names = input;}}/>
-          <input
-            type='text'
-            id='price'
-            placeholder='Price'
-            ref={(input) => {_price = input;}}/>
-            <input
-              type='text'
-              id='alcoholContent'
-              placeholder='Alcoholcontent'
-              ref={(input) => {_alcoholContent = input;}}/>
-            <button type='submit'>Add new Keg!</button>
-        </form>
+      <MDBContainer>
+         <MDBRow>
+           <MDBCol md="6">
+             <form  onSubmit={handleNewKegFormSubmission}>
+               <p className="h4 text-center mb-4">Add new keg</p>
+               <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
+                 Name
+               </label>
+               <input
+                 type="text"
+                 id="defaultFormRegisterNameEx"
+                 className="form-control"
+                 ref={(input) => {_names = input;}}
+               />
+               <br />
+               <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
+                 Price
+               </label>
+               <input
+                 type="text"
+                 id="defaultFormRegisterEmailEx"
+                 className="form-control"
+                  ref={(input) => {_price = input;}}
+               />
+               <br />
+               <label
+                 htmlFor="defaultFormRegisterConfirmEx"
+                 className="grey-text"
+               >
+                 Alcohol Content
+               </label>
+               <input
+                 type="text"
+                 id="defaultFormRegisterConfirmEx"
+                 className="form-control"
+                ref={(input) => {_alcoholContent = input;}}
+               />
+          
+
+               <div className="text-center mt-4">
+                 <MDBBtn color="unique" type="submit">
+                   Add
+                 </MDBBtn>
+               </div>
+             </form>
+           </MDBCol>
+         </MDBRow>
+       </MDBContainer>
+
     </div>
   );
 }

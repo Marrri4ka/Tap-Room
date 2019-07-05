@@ -3,6 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 
+https://www.npmjs.com/package/mdbreact
+https://mdbootstrap.com/docs/react/forms/basic/
+
 ## Specifications
 
 
