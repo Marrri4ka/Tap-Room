@@ -8,7 +8,7 @@ function Header(){
       <div class="navbar-nav">
         <a class="nav-item nav-link active">Home</a>
         <a class="nav-item nav-link">Log in</a>
-        <a class="nav-item nav-link">Add keg</a>
+        <a class="nav-item nav-link"><Link to='/newkeg'>Add keg</Link></a>
         <a class="nav-item nav-link"><Link to='/allkegs'>All kegs</Link></a>
 
       </div>
