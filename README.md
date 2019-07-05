@@ -1,6 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tap Room ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+
+## Specifications
+
+
+* As a patron, you are able  to see a list/menu of all available kegs. For each keg, you can see its name, brand, price and alcoholContent.
+* As an employee, you are able to fill out a form when you tap a new keg to add it to the list.
+* As an employee, you are able to edit a keg's properties after entering them just in case you make a mistake.
+* As an employee, you are  able to click a button next to a keg whenever you sell a pint of it. This should decrease the number of pints left by 1.
+* As an employee, you are  able to see kegs with less than 10 pints left.
+* As a patron, you are able to use the alcohol content property to display stronger beers differently than weaker beers.
+
+
+
+
+
+## Technical Features
+* React
+* Bootstrap
+* HTML
+* CSS
+
+
+## Support and contact details
+
+If you have any questions or problems, please contact
+* Mariia Stashuk(mariiapopovych@gmail.com)
+
+##  Set up the project
+
+Clone project directory:
+### `https://github.com/Marrri4ka/women_clinics.git`
+In the project directory, you can run:
+### `npm install`
+### `npm start`
+
+
+
+
+
+##Available Scripts
+<details>
+<summary>Click Here for Details</summary>
 
 In the project directory, you can run:
 
@@ -66,3 +109,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+</details>
+
+## 📜 License
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
+Copyright (c) 2019 **_Mariia Stashuk_ **

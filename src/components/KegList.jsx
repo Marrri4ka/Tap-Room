@@ -2,9 +2,10 @@ import React from 'react';
 import Keg from './Keg';
 import Header from './Header';
 import taproom from '../assets/img/taproom.png';
+import PropTypes from 'prop-types';
 
 
-function KegList(){
+function KegList(props){
 
   let divStyle = {
   position: "relative",
@@ -38,8 +39,17 @@ let placeStyle = {
             </div>
             </div>
           </div>
+          <div>
+            {props.kegList.map((keg)=>
+              <Keg names={keg.names}/>
+            )}
+          </div>
         </div>
   );
 }
+
+KegList.propTypes = {
+  kegList: PropTypes.array
+};
 
 export default KegList;
