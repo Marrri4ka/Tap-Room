@@ -29,6 +29,7 @@ render(){
         <Route exact path='/' render={()=><Home/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
+        <Route path='/test' render={()=><TestPage/>}/>
       </Switch>
     </div>
   );

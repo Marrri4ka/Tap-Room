@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animakit-slider": "^0.1.3",
     "bootstrap": "^4.1.1",
     "mdbreact": "^4.17.0",
     "react": "^16.8.6",
+    "react-anime": "^2.2.0",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.12.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.1",
+    "react-simple-animate": "^3.2.0",
     "uuid": "^3.2.1"
   },
   "scripts": {

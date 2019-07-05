@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {v4} from 'uuid';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
+import Header from './Header';
 
 function NewKeg(props){
   let _names = null;
@@ -21,6 +22,9 @@ function NewKeg(props){
 
   return (
     <div>
+      <div>
+      <Header/>
+      </div>
 
       <MDBContainer>
          <MDBRow>
@@ -59,7 +63,7 @@ function NewKeg(props){
                  className="form-control"
                 ref={(input) => {_alcoholContent = input;}}
                />
-          
+
 
                <div className="text-center mt-4">
                  <MDBBtn color="unique" type="submit">
