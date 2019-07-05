@@ -5,6 +5,7 @@ import Home from './components/Home';
 import {Switch, Route} from 'react-router-dom';
 import KegList from './components/KegList';
 import NewKeg from './components/NewKeg';
+import TestPage from './components/TestPage';
 
 
 class App extends React.Component{
@@ -25,13 +26,11 @@ render(){
   return (
     <div>
       <Switch>
-        <Route path='/' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
+        <Route exact path='/' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' component ={KegList}/>
       </Switch>
-        <Home/>
     </div>
-
   );
 }
 }
