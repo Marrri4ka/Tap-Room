@@ -18,17 +18,17 @@ class App extends React.Component{
 }
 
 handleAddingNewKegToList(newKeg){
-  var newMasterTicketList = this.state.masterTicketList.slice();
-  newMasterTicketList.push(newKeg);
-  this.setState({masterKegList: newMasterTicketList});
+  var newmasterKegList = this.state.masterKegList.slice();
+  newmasterKegList.push(newKeg);
+  this.setState({masterKegList: newmasterKegList});
 }
 render(){
   return (
     <div>
       <Switch>
-        <Route exact path='/' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
+        <Route exact path='/' render={()=><Home/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
-        <Route path='/allkegs' component ={KegList}/>
+        <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
       </Switch>
     </div>
   );
