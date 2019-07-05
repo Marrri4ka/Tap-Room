@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom';
 import KegList from './components/KegList';
 import NewKeg from './components/NewKeg';
 
+
 class App extends React.Component{
   constructor(props) {
   super(props);
@@ -24,8 +25,8 @@ render(){
   return (
     <div>
       <Switch>
-        <Route path='/' render={()=><KegList keglist={this.state.masterKegList}/>}/>
-        <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+        <Route path='/' render={()=><KegList kegListProperty={this.state.masterKegList}/>}/>
+        <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' component ={KegList}/>
       </Switch>
         <Home/>

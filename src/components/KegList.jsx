@@ -33,14 +33,14 @@ let placeStyle = {
           <div  style={placeStyle}>
             <div className='row'>
               <div className='col-md-1'/>
-              <Keg img = 'https://picsum.photos/200/400' name="GERMAN PILSNER"  price= "$6" alcoholContent= "ABV 5.4%|35 IBU" />
+              <Keg img = 'https://picsum.photos/200/400' brand="lorem" name="GERMAN PILSNER"  price= "$6" alcoholContent= "ABV 5.4%|35 IBU" />
 
               <div className='col-md-1'/>
             </div>
             </div>
           </div>
           <div>
-            {props.kegList.map((keg)=>
+            {props.kegListProperty.map((keg)=>
               <Keg names={keg.names}/>
             )}
           </div>
@@ -49,7 +49,7 @@ let placeStyle = {
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegListProperty: PropTypes.array
 };
 
 export default KegList;
