@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MDBBtn } from "mdbreact";
 
 function Keg (props){
 
@@ -21,6 +22,8 @@ function Keg (props){
            <p class="card-text">
            <h4>{props.alcoholContent}</h4></p>
            <a href="#" class="btn btn-primary">{props.price}</a>
+           <span>Kegs:{props.kegs}</span>
+           <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add keg</MDBBtn>
          </div>
        </div>
    </div>
@@ -35,7 +38,10 @@ Keg.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.string,
   alcoholContent: PropTypes.string,
-  img: PropTypes.string
+  img: PropTypes.string,
+  addKeg: PropTypes.func,
+  kegs: PropTypes.string,
+  index: PropTypes.number
 }
 
 export default Keg;

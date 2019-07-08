@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {v4} from 'uuid';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import Header from './Header';
+import {withRouter} from 'react-router';
 
 function NewKeg(props){
   let _names = null;
@@ -11,6 +12,7 @@ function NewKeg(props){
 
 
   function handleNewKegFormSubmission(e){
+
     e.preventDefault();
     props.onNewKegCreation({
       names: _names.value,
@@ -18,6 +20,7 @@ function NewKeg(props){
       alcoholContent: _alcoholContent.value,
       id: v4()
     });
+    props.history.push('/allkegs');
   }
 
   return (
@@ -66,7 +69,7 @@ function NewKeg(props){
 
 
                <div className="text-center mt-4">
-                 <MDBBtn color="unique" type="submit">
+                 <MDBBtn scolor="unique" type="submit">
                    Add
                  </MDBBtn>
                </div>
@@ -83,4 +86,4 @@ NewKeg.propTypes = {
   onNewKegCreation: PropTypes.func
 };
 
-export default NewKeg;
+export default withRouter( NewKeg);

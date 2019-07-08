@@ -32,10 +32,15 @@ let placeStyle = {
           <img  style={imageStyle}  src = {taproom}/>
           <div  style={placeStyle}>
               {
-                props.kegListProperty.map((keg)=>
+                props.kegListProperty.map((keg,index)=>
                 <div className='row'>
                   <div className='col-md-1'/>
-                  <Keg img = 'https://picsum.photos/200/400' brand="lorem" names={keg.names} price={keg.price} alcoholContent={keg.alcoholContent} />
+                  <Keg img = 'https://images.unsplash.com/photo-1487260211189-670c54da558d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' brand="lorem" names={keg.names}
+                    price={keg.price}
+                    kegs={keg.kegs}
+                    index={index}
+                   alcoholContent={keg.alcoholContent}
+                   addKeg={props.addKeg} />
                   <div className='col-md-1'/>
                   </div>
               )}
@@ -47,7 +52,8 @@ let placeStyle = {
 }
 
 KegList.propTypes = {
-  kegListProperty: PropTypes.array
+  kegListProperty: PropTypes.array,
+  addKeg: PropTypes.func
 };
 
 export default KegList;
