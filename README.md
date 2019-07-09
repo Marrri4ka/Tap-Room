@@ -1,5 +1,5 @@
 # Tap Room ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
+![Alt text](/img/Blank Diagram.png)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 
