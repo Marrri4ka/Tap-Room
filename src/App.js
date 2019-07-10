@@ -12,11 +12,14 @@ import Error404 from './components/Error404';
 class App extends React.Component{
   constructor(props) {
   super(props);
+
   this.state = {
-    masterKegList: []
+    masterKegList: [],
+    filteredKegList:[]
   };
   this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   this.addKeg = this.addKeg.bind(this);
+  this.onSearch = this.onSearch.bind(this);
 }
 
 handleAddingNewKegToList(newKeg){
@@ -24,6 +27,13 @@ handleAddingNewKegToList(newKeg){
   var newmasterKegList = this.state.masterKegList.slice();
   newmasterKegList.push(newKeg);
   this.setState({masterKegList: newmasterKegList});
+}
+
+onSearch(query){
+  let filtered = this.state.masterKegList.filter(m=>
+  m.newKeg.toLoweCase().startsWith(query.target.value.toLowerCase()));
+  this.setState({masterKegList: this.state.masterKegList,filteredKegList: filtered });
+
 }
 
 addKeg(index){
@@ -37,7 +47,7 @@ render(){
   return (
     <div>
       <Switch>
-        <Route exact path='/' render={()=><Home/>}/>
+        <Route exact path='/' render={()=><Home onSearch={this.onSearch}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList} addKeg={this.addKeg}/>}/>
         <Route path='/test' render={()=><TestPage/>}/>
