@@ -13,21 +13,14 @@ function Keg (props){
   left: '16px'
   }
   return (
-   <div style={container} className='col-md-2'>
-       <div class="card" style={{width: '1rem;'}}>
-         <img src={props.img}/>
-         <div style={topleft}>
-         <div class="card-body">
-           <h5 class="card-title"><h3>{props.names}</h3></h5>
-           <p class="card-text">
-           <h4>{props.alcoholContent}</h4></p>
+    <div style={{backgroundColor:'white'}}>
+   <h3>{props.names}</h3>
+
+           <h4 >{props.alcoholContent}</h4>
            <a href="#" class="btn btn-primary">{props.price}</a>
            <span>Kegs:{props.kegs}</span>
            <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add keg</MDBBtn>
-         </div>
-       </div>
-   </div>
- </div>
+</div>
 
 
   );

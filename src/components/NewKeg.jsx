@@ -78,6 +78,9 @@ function NewKeg(props){
          </MDBRow>
        </MDBContainer>
 
+       
+
+
     </div>
   );
 }

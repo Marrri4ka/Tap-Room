@@ -14,7 +14,8 @@ function KegList(props){
 
 let imageStyle = {
   position: "absolute",
-  zIndex: "2"
+  zIndex: "2",
+  marginRight:'10px'
 }
 
 let placeStyle = {
@@ -31,20 +32,26 @@ let placeStyle = {
       <div style={divStyle}>
           <img  style={imageStyle}  src = {taproom}/>
           <div  style={placeStyle}>
+          <div class='container'>
+            <div className='row'>
               {
                 props.kegListProperty.map((keg,index)=>
-                <div className='row'>
-                  <div className='col-md-1'/>
+                <div >
+                                  <img src="http://picsum.photos/350/400"/>
+                  <div className='col-md-2'/>
                   <Keg img = 'https://images.unsplash.com/photo-1487260211189-670c54da558d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' brand="lorem" names={keg.names}
+
                     price={keg.price}
                     kegs={keg.kegs}
                     index={index}
                    alcoholContent={keg.alcoholContent}
                    addKeg={props.addKeg} />
-                  <div className='col-md-1'/>
+                  <div className='col-md-2'/>
                   </div>
               )}
             </div>
+            </div>
+          </div>
           </div>
 
         </div>
