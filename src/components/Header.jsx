@@ -30,8 +30,8 @@ class Header extends React.Component{
       <li class="nav-item">
       <Link to='/allkegs'>  <a class="nav-link" href="#">All kegs</a></Link>
       </li>
-    
-    <button onClick={()=> this.props.onUder10Property()}>Less than 10</button>
+
+    <button onClick={()=> this.props.onUder10Property}>Less than 10</button>
 
 
     </ul>

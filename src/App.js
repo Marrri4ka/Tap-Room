@@ -24,7 +24,6 @@ class App extends React.Component{
 }
 
 handleAddingNewKegToList(newKeg){
-  newKeg.kegs=124;
   var newmasterKegList = this.state.masterKegList.slice();
   newmasterKegList.push(newKeg);
   this.setState({masterKegList: newmasterKegList});
@@ -39,7 +38,7 @@ onSearch(query){
 
 addKeg(index){
   const newMasterKegList = [...this.state.masterKegList];
-  newMasterKegList[index].kegs++;
+  newMasterKegList[index].pints++;
   this.setState({masterKegList:newMasterKegList});
 
 }

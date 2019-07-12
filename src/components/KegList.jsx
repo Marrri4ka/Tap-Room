@@ -43,6 +43,7 @@ let placeStyle = {
 
                     price={keg.price}
                     kegs={keg.kegs}
+                    pints={keg.pints}
                     index={index}
                    alcoholContent={keg.alcoholContent}
                    addKeg={props.addKeg} />

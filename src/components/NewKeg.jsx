@@ -9,6 +9,7 @@ function NewKeg(props){
   let _names = null;
   let _price = null;
   let _alcoholContent= null;
+  let _pints = null;
 
 
   function handleNewKegFormSubmission(e){
@@ -19,13 +20,15 @@ function NewKeg(props){
       price: _price.value,
       alcoholContent: _alcoholContent.value,
       id: v4(),
-      index: props.match.params.index
+      index: props.match.params.index,
+      pints: _pints.value
     });
     props.history.push('/allkegs');
   }
 let initialName = "";
 let initialPrice = "";
 let initialAc = "";
+let initialPints ="";
 
 const kegId = props.match.params.index;
 if(kegId !== undefined){
@@ -33,6 +36,7 @@ if(kegId !== undefined){
   initialName= showKeg.names;
   initialPrice=showKeg.price;
   initialAc=showKeg.alcoholContent;
+  initialPints= showKeg.pints;
 }
 
 
@@ -83,6 +87,18 @@ if(kegId !== undefined){
                 ref={(input) => {_alcoholContent = input;}}
                 defaultValue = {initialAc}
                />
+               <br />
+               <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
+                 Pints
+               </label>
+               <input
+                 type="text"
+                 id="defaultFormRegisterEmailEx"
+                 className="form-control"
+                  ref={(input) => {_pints = input;}}
+                   defaultValue = {initialPints}
+               />
+
 
 
                <div className="text-center mt-4">
