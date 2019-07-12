@@ -31,7 +31,7 @@ class Header extends React.Component{
       <Link to='/allkegs'>  <a class="nav-link" href="#">All kegs</a></Link>
       </li>
 
-    <button onClick={()=> this.props.onUder10Property}>Less than 10</button>
+    <button onClick={()=> this.props.onUnder10Property()}>Less than 10</button>
 
 
     </ul>
@@ -52,7 +52,7 @@ class Header extends React.Component{
 
 Header.propTypes = {
   onSearch: PropTypes.func,
-  onUder10Property: PropTypes.func
+  onUnder10Property: PropTypes.func
 
 }
 

@@ -25,7 +25,7 @@ let placeStyle = {
 }
   return (
     <div>
-    <div><Header/></div>
+    <div><Header onUnder10Property={props.onUnder10}/></div>
 
 
 
@@ -61,7 +61,9 @@ let placeStyle = {
 
 KegList.propTypes = {
   kegListProperty: PropTypes.array,
-  addKeg: PropTypes.func
+  addKeg: PropTypes.func,
+  onSearch: PropTypes.func,
+  onUnder10: PropTypes.func
 };
 
 export default KegList;
