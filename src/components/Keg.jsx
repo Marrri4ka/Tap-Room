@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDBBtn } from "mdbreact";
+import {Link} from 'react-router-dom';
 
 function Keg (props){
 
@@ -14,7 +15,7 @@ function Keg (props){
   }
   return (
     <div style={{backgroundColor:'white'}}>
-   <h3>{props.names}</h3>
+<Link to ={"/keg" + props.index}> <h3>{props.names}</h3> </Link>
 
            <h4 >{props.alcoholContent}</h4>
            <a href="#" class="btn btn-primary">{props.price}</a>

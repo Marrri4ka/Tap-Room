@@ -50,8 +50,8 @@ render(){
         <Route exact path='/' render={()=><Home onSearch={this.onSearch}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList} addKeg={this.addKeg}/>}/>
-        <Route path='/test' render={()=><TestPage/>}/>
-        <Route component = {Error404}/>
+        <Route path='/keg/:index' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList}  kegListProperty={this.state.masterKegList} />} />
+      
       </Switch>
     </div>
   );

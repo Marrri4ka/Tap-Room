@@ -7,7 +7,7 @@ class Home extends React.Component{
 constructor(props){
   super(props);
 }
-rendre(){
+render(){
   return(
     <div>
     <Header  onChange = {this.props.onSearch}/>
