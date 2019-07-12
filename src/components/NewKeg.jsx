@@ -19,7 +19,7 @@ function NewKeg(props){
       price: _price.value,
       alcoholContent: _alcoholContent.value,
       id: v4(),
-      index: props.math.params.index
+      index: props.match.params.index
     });
     props.history.push('/allkegs');
   }
