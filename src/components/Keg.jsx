@@ -20,8 +20,9 @@ function Keg (props){
            <h4 >{props.alcoholContent}</h4>
            <a href="#" class="btn btn-primary">{props.price}</a>
             <span>Pints:{props.pints}</span>
-           <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add keg</MDBBtn>
-            <MDBBtn onClick={()=>props.sellKeg(props.index)}color="unique">Add keg</MDBBtn>
+           <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add pint</MDBBtn>
+            <MDBBtn onClick={()=>props.sellKeg(props.index)}color="unique">Sell pint</MDBBtn>
+            <MDBBtn onClick={()=>props.deleteKeg(props.index)}color="unique">Delete</MDBBtn>
 </div>
 
 
@@ -38,7 +39,9 @@ Keg.propTypes = {
   kegs: PropTypes.string,
   index: PropTypes.number,
   pints: PropTypes.number,
-  sellKeg: PropTypes.func 
+  sellKeg: PropTypes.func,
+  deleteKeg: PropTypes.func
+
 }
 
 export default Keg;

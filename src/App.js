@@ -23,6 +23,7 @@ class App extends React.Component{
   this.handleEditKeg = this.handleEditKeg.bind(this);
   this.onUnder10 = this.onUnder10.bind(this);
   this.sellKeg = this.sellKeg.bind(this);
+  this.deleteKeg = this.deleteKeg.bind(this);
 }
 
 handleAddingNewKegToList(newKeg){
@@ -56,9 +57,12 @@ handleEditKeg(newKeg){
     const newMasterKegList = [...this.state.masterKegList];
     newMasterKegList[newKeg.index] = newKeg;
     this.setState({masterKegList:newMasterKegList ,filteredKegList: newMasterKegList});
+}
 
-
-
+deleteKeg(index){
+    const newMasterKegList = [...this.state.masterKegList];
+    newMasterKegList.splice(index,1);
+    this.setState({masterKegList:newMasterKegList,filteredKegList: newMasterKegList});
 }
 
 onUnder10(){
@@ -73,7 +77,7 @@ render(){
       <Switch>
         <Route exact path='/' render={()=><Home onSearch={this.onSearch} onUnder10={this.onUnder10}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
-        <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.filteredKegList} addKeg={this.addKeg} onUnder10={this.onUnder10} sellKeg={this.sellKeg}/>}/>
+        <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.filteredKegList} addKeg={this.addKeg} onUnder10={this.onUnder10} sellKeg={this.sellKeg} deleteKeg={this.deleteKeg}/>}/>
         <Route path='/keg/:index' render={()=><NewKeg onNewKegCreation={this.handleEditKeg}  kegListProperty={this.state.masterKegList} />} />
 
       </Switch>
