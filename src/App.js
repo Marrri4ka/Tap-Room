@@ -53,11 +53,17 @@ handleEditKeg(newKeg){
 
 }
 
+onUnder10(){
+  let filtered = this.state.masterKegList.filter(m=>
+  parseInt(m.pints<=10));
+  this.setState ({masterKegList: this.state.masterKegList, filteredKegList: filtered});
+}
+
 render(){
   return (
     <div>
       <Switch>
-        <Route exact path='/' render={()=><Home onSearch={this.onSearch}/>}/>
+        <Route exact path='/' render={()=><Home onSearch={this.onSearch} onUnder10={this.onUnder10}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList} addKeg={this.addKeg}/>}/>
         <Route path='/keg/:index' render={()=><NewKeg onNewKegCreation={this.handleEditKeg}  kegListProperty={this.state.masterKegList} />} />

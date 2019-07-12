@@ -30,9 +30,8 @@ class Header extends React.Component{
       <li class="nav-item">
       <Link to='/allkegs'>  <a class="nav-link" href="#">All kegs</a></Link>
       </li>
-      <li class="nav-item">
-      <Link to='/test'>  <a class="nav-link" href="#">Test</a></Link>
-      </li>
+    
+    <button onClick={()=> this.props.onUder10Property()}>Less than 10</button>
 
 
     </ul>
@@ -52,7 +51,9 @@ class Header extends React.Component{
 }
 
 Header.propTypes = {
-  onSearch: PropTypes.func
+  onSearch: PropTypes.func,
+  onUder10Property: PropTypes.func
+
 }
 
 

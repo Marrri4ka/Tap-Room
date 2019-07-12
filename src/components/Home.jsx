@@ -10,11 +10,17 @@ constructor(props){
 render(){
   return(
     <div>
-    <Header  onChange = {this.props.onSearch}/>
+    <Header  onChange = {this.props.onSearch} onUder10Property={this.onUnder10}/>
     <img src={taproom}/>
     </div>
   );
 }
+}
+
+Home.propTypes={
+  onSearch: PropTypes.func,
+  onUnder10: PropTypes.func
+
 }
 
 export default Home;
