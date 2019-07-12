@@ -31,6 +31,8 @@ const kegId = props.match.params.index;
 if(kegId !== undefined){
   const showKeg = props.kegListProperty[kegId];
   initialName= showKeg.names;
+  initialPrice=showKeg.price;
+  initialAc=showKeg.alcoholContent;
 }
 
 

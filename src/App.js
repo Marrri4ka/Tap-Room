@@ -20,6 +20,7 @@ class App extends React.Component{
   this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   this.addKeg = this.addKeg.bind(this);
   this.onSearch = this.onSearch.bind(this);
+  this.handleEditKeg = this.handleEditKeg.bind(this);
 }
 
 handleAddingNewKegToList(newKeg){
@@ -43,6 +44,15 @@ addKeg(index){
 
 }
 
+handleEditKeg(newKeg){
+    const newMasterKegList = [...this.state.masterKegList];
+    newMasterKegList[newKeg.index] = newKeg;
+    this.setState({masterKegList:newMasterKegList });
+
+
+
+}
+
 render(){
   return (
     <div>
@@ -50,8 +60,8 @@ render(){
         <Route exact path='/' render={()=><Home onSearch={this.onSearch}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.masterKegList} addKeg={this.addKeg}/>}/>
-        <Route path='/keg/:index' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList}  kegListProperty={this.state.masterKegList} />} />
-      
+        <Route path='/keg/:index' render={()=><NewKeg onNewKegCreation={this.handleEditKeg}  kegListProperty={this.state.masterKegList} />} />
+
       </Switch>
     </div>
   );
