@@ -15,7 +15,7 @@ function Keg (props){
   }
   return (
     <div style={{backgroundColor:'white'}}>
-<Link to ={"/keg" + props.index}> <h3>{props.names}</h3> </Link>
+<Link to ={"/keg/" + props.index}> <h3>{props.names}</h3> </Link>
 
            <h4 >{props.alcoholContent}</h4>
            <a href="#" class="btn btn-primary">{props.price}</a>
