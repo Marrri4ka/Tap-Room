@@ -18,10 +18,22 @@ function NewKeg(props){
       names: _names.value,
       price: _price.value,
       alcoholContent: _alcoholContent.value,
-      id: v4()
+      id: v4(),
+      index: props.math.params.index
     });
     props.history.push('/allkegs');
   }
+let initialName = "";
+let initialPrice = "";
+let initialAc = "";
+
+const kegId = props.match.params.index;
+if(kegId !== undefined){
+  const showKeg = props.kegListProperty[kegId];
+  initialName= showKeg.names;
+}
+
+
 
   return (
     <div>
@@ -42,6 +54,7 @@ function NewKeg(props){
                  id="defaultFormRegisterNameEx"
                  className="form-control"
                  ref={(input) => {_names = input;}}
+                 defaultValue = {initialName}
                />
                <br />
                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
@@ -52,6 +65,7 @@ function NewKeg(props){
                  id="defaultFormRegisterEmailEx"
                  className="form-control"
                   ref={(input) => {_price = input;}}
+                   defaultValue = {initialPrice}
                />
                <br />
                <label
@@ -65,6 +79,7 @@ function NewKeg(props){
                  id="defaultFormRegisterConfirmEx"
                  className="form-control"
                 ref={(input) => {_alcoholContent = input;}}
+                defaultValue = {initialAc}
                />
 
 
@@ -78,7 +93,7 @@ function NewKeg(props){
          </MDBRow>
        </MDBContainer>
 
-       
+
 
 
     </div>
@@ -86,7 +101,8 @@ function NewKeg(props){
 }
 
 NewKeg.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
+  kegListProperty: PropTypes.array
 };
 
 export default withRouter( NewKeg);
