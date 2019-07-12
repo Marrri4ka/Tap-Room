@@ -46,7 +46,8 @@ let placeStyle = {
                     pints={keg.pints}
                     index={index}
                    alcoholContent={keg.alcoholContent}
-                   addKeg={props.addKeg} />
+                   addKeg={props.addKeg}
+                   sellKeg={props.sellKeg} />
                   <div className='col-md-2'/>
                   </div>
               )}
@@ -63,7 +64,8 @@ KegList.propTypes = {
   kegListProperty: PropTypes.array,
   addKeg: PropTypes.func,
   onSearch: PropTypes.func,
-  onUnder10: PropTypes.func
+  onUnder10: PropTypes.func,
+  sellKeg: PropTypes.func
 };
 
 export default KegList;
