@@ -67,7 +67,7 @@ deleteKeg(index){
 
 onUnder10(){
   let filtered = this.state.masterKegList.filter(m=>
-  parseInt(m.pints<=10));
+  parseInt(m.pints)<=10);
   this.setState ({masterKegList: this.state.masterKegList, filteredKegList: filtered});
 }
 

@@ -20,7 +20,7 @@ let imageStyle = {
 
 let placeStyle = {
   position: "relative",
-  top: "300px",
+  top: "80px",
   zIndex: "3"
 }
   return (
@@ -29,16 +29,16 @@ let placeStyle = {
 
 
 
-      <div style={divStyle}>
+      <div>
           <img  style={imageStyle}  src = {taproom}/>
           <div  style={placeStyle}>
           <div class='container'>
-            <div className='row'>
+            <div className='row' >
               {
                 props.kegListProperty.map((keg,index)=>
                 <div >
                                   <img src="http://picsum.photos/350/400"/>
-                  <div className='col-md-2'/>
+                  <div  className='col-md-2'/>
                   <Keg img = 'https://images.unsplash.com/photo-1487260211189-670c54da558d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' brand="lorem" names={keg.names}
 
                     price={keg.price}

@@ -11,7 +11,7 @@ render(){
   return(
     <div>
     <Header  onChange = {this.props.onSearch} onUder10Property={this.onUnder10}/>
-    <img src={taproom}/>
+    <img src={taproom} />
     </div>
   );
 }

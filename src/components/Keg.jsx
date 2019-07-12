@@ -14,15 +14,17 @@ function Keg (props){
   left: '16px'
   }
   return (
-    <div style={{backgroundColor:'white'}}>
+    <div style={{height:"10px"}}>
+    <div style={{backgroundColor: (props.alcoholContent)<10 ?'grey' : 'red'}} weight="20px">
 <Link to ={"/keg/" + props.index}> <h3>{props.names}</h3> </Link>
 
            <h4 >{props.alcoholContent}</h4>
-           <a href="#" class="btn btn-primary">{props.price}</a>
-            <span>Pints:{props.pints}</span>
-           <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add pint</MDBBtn>
-            <MDBBtn onClick={()=>props.sellKeg(props.index)}color="unique">Sell pint</MDBBtn>
+           <h4>${props.price}</h4>
+            <span>Pints:{props.pints}</span><br/>
+           <MDBBtn onClick={()=>props.addKeg(props.index)}color="unique">Add pint</MDBBtn><br/>
+            <MDBBtn onClick={()=>props.sellKeg(props.index)}color="unique">Sell pint</MDBBtn><br/>
             <MDBBtn onClick={()=>props.deleteKeg(props.index)}color="unique">Delete</MDBBtn>
+</div>
 </div>
 
 
