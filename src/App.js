@@ -7,6 +7,10 @@ import KegList from './components/KegList';
 import NewKeg from './components/NewKeg';
 import TestPage from './components/TestPage';
 import Error404 from './components/Error404';
+import Demo from './components/Demo';
+
+// In your render...
+
 
 
 class App extends React.Component{
@@ -74,7 +78,12 @@ onUnder10(){
 render(){
   return (
     <div>
+
+      <Demo/>
+
+
       <Switch>
+
         <Route exact path='/' render={()=><Home onSearch={this.onSearch} onUnder10={this.onUnder10}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onNewKegCreation={this.handleAddingNewKegToList} />} />
         <Route path='/allkegs' render={()=><KegList kegListProperty={this.state.filteredKegList} addKeg={this.addKeg} onUnder10={this.onUnder10} sellKeg={this.sellKeg} deleteKeg={this.deleteKeg}/>}/>
