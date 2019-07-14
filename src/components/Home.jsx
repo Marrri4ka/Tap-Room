@@ -10,7 +10,7 @@ constructor(props){
 render(){
   return(
     <div>
-    <Header  onChange = {this.props.onSearch} onUder10Property={this.onUnder10}/>
+    <Header  onChange = {this.props.onSearch} onUnder10Property={this.props.onUnder10} onLogin = {this.props.onLogin}/>
     <img src={taproom} />
     </div>
   );
@@ -19,7 +19,8 @@ render(){
 
 Home.propTypes={
   onSearch: PropTypes.func,
-  onUnder10: PropTypes.func
+  onUnder10: PropTypes.func,
+  onLogin: PropTypes.func
 
 }
 

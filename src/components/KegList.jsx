@@ -67,7 +67,8 @@ KegList.propTypes = {
   onSearch: PropTypes.func,
   onUnder10: PropTypes.func,
   sellKeg: PropTypes.func,
-  deleteKeg: PropTypes.func
+  deleteKeg: PropTypes.func,
+    onLogin: PropTypes.func
 };
 
 export default KegList;

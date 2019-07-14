@@ -32,6 +32,7 @@ class Header extends React.Component{
       </li>
 
     <button onClick={()=> this.props.onUnder10Property()}>Less than 10</button>
+    <button onClick={()=> this.props.onLogin()}>Log in</button>
 
 
     </ul>
@@ -52,7 +53,8 @@ class Header extends React.Component{
 
 Header.propTypes = {
   onSearch: PropTypes.func,
-  onUnder10Property: PropTypes.func
+  onUnder10Property: PropTypes.func,
+  onLogin: PropTypes.func
 
 }
 
