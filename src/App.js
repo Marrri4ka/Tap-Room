@@ -8,6 +8,7 @@ import NewKeg from './components/NewKeg';
 import TestPage from './components/TestPage';
 import Error404 from './components/Error404';
 import Demo from './components/Demo';
+import axios from './axios-db';
 
 // In your render...
 
@@ -22,6 +23,17 @@ class App extends React.Component{
     filteredKegList:[],
     isAuthenticated: false
   };
+  let newMasterKegList = [];
+  var self = this;
+  const kegListFromDatabase = axios.get("/kegs.json")
+    .then(function (response) {
+      Object.keys(response.data).forEach(function(key) {
+        newMasterKegList.push(response.data[key]);
+      })
+      self.setState({masterKegList : newMasterKegList, filteredKegList : newMasterKegList});
+    });
+
+
   this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   this.addKeg = this.addKeg.bind(this);
   this.onSearch = this.onSearch.bind(this);
@@ -43,9 +55,7 @@ class App extends React.Component{
   }
 
 handleAddingNewKegToList(newKeg){
-  var newMasterKegList = this.state.masterKegList.slice();
-  newMasterKegList.push(newKeg);
-  this.setState({masterKegList: newMasterKegList, filteredKegList: newMasterKegList});
+
 }
 
 onSearch(query){

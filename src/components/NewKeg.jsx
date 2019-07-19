@@ -4,6 +4,7 @@ import {v4} from 'uuid';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import Header from './Header';
 import {withRouter} from 'react-router';
+import axios from '../../src/axios-db';
 
 function NewKeg(props){
   let _names = null;
@@ -15,15 +16,19 @@ function NewKeg(props){
   function handleNewKegFormSubmission(e){
 
     e.preventDefault();
-    props.onNewKegCreation({
+    const newKeg = {
       names: _names.value,
       price: _price.value,
       alcoholContent: _alcoholContent.value,
       id: v4(),
       index: props.match.params.index,
       pints: _pints.value
-    });
-    props.history.push('/allkegs');
+    };
+    axios
+      .post("/kegs.json", newKeg)
+      .then(response => props.history.push('/allkegs'))
+      .catch(error => console.log(error));
+
   }
 let initialName = "";
 let initialPrice = "";
